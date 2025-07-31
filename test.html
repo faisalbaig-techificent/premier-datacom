@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Section</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Add Swiper JS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      .testimonial-section {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        padding: 80px 0;
+        color: white;
+      }
+
+      .testimonial-container {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .testimonial-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 20px;
+      }
+
+      .testimonial-box {
+        border: 5px solid white;
+        width: 100%;
+        max-width: 300px;
+        height: 330px;
+        position: relative;
+        background: transparent;
+      }
+
+      .testimonial-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-24%, -50%);
+        background: white;
+        color: #333;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        min-height: 280px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        padding-bottom: 60px;
+      }
+
+      .testimonial-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .testimonial-text {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .client-info > div.divider {
+        width: 20px;
+        height: 1px;
+        background-color: #999;
+      }
+
+      .client-details h6 {
+        margin: 0;
+        font-weight: 600;
+        color: #2a5298;
+      }
+
+      .client-details p {
+        margin: 0;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .stars {
+        color: #ffc107;
+        /* margin-bottom: 15px; */
+      }
+
+      .nav-arrows {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .nav-btn {
+        width: 35px;
+        height: 35px;
+        background: #2a5298;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn:hover {
+        background: #1e3c72;
+        transform: scale(1.1);
+      }
+
+      .nav-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+       .nav-btn-left {
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        color: #102039;
+
+        border: 1px solid #102039;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn-left:hover {
+        transform: scale(1.1);
+      }
+
+      .nav-btn-left:disabled {
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .swiper-pagination {
+        position: relative;
+        margin-top: 40px;
+      }
+
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: white;
+      }
+
+      /* Hide default Swiper navigation */
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 991px) {
+        .testimonial-card {
+          transform: translate(-50%, -50%);
+          left: 50%;
+          max-width: 90%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .testimonial-slide {
+          flex-direction: column;
+        }
+
+        .testimonial-box {
+          display: none;
+        }
+
+        .testimonial-card {
+          position: relative;
+          transform: none;
+          margin-top: 30px;
+          width: 100%;
+          max-width: none;
+          left: auto;
+          top: auto;
+        }
+
+        .section-header h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .testimonial-section {
+          padding: 60px 0;
+        }
+
+        .testimonial-card {
+          padding: 20px;
+        }
+
+        .section-header h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>
+            Our commitment to quality and reliability shines through the words
+            of those we've proudly served across countless successful projects.
+          </p>
+        </div>
+
+        <!-- Swiper container -->
+        <div class="testimonial-container">
+          <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper" id="testimonialSlider">
+              <!-- Slides will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <script>
+      // Testimonial data
+      const testimonials = [
+        {
+          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.",
+          name: "John Wilson",
+          title: "Business Owner",
+          stars: [1, 1, 1, 1, 1], // 1 = full star, 0.5 = half star, 0 = empty star
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+        // {
+        //   text: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched. They delivered our project on time and exceeded all expectations.",
+        //   name: "Sarah Johnson",
+        //   title: "Marketing Director",
+        //   stars: [1, 1, 1, 1, 0.5],
+        //   avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        // },
+        // {
+        //   text: "Professional, reliable, and incredibly talented. They transformed our vision into reality and provided ongoing support that has been invaluable to our business growth. Highly recommended for anyone looking for quality work.",
+        //   name: "Michael Chen",
+        //   title: "CEO",
+        //   stars: [1, 1, 1, 1, 0],
+        //   avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        // },
+      ];
+
+      // Function to render star icons based on rating
+      function renderStars(ratingArray) {
+        return ratingArray
+          .map((star, index) => {
+            if (star === 1) return '<i class="fas fa-star"></i>';
+            if (star === 0.5) return '<i class="fas fa-star-half-alt"></i>';
+            return '<i class="far fa-star"></i>';
+          })
+          .join("");
+      }
+
+      // Generate testimonial slides using map()
+      function generateTestimonialSlides() {
+        const sliderContainer = document.getElementById("testimonialSlider");
+
+        const slides = testimonials.map(
+          (testimonial) => `
+          <div class="swiper-slide testimonial-slide">
+            <div class="testimonial-box"></div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <!-- Left: Quote Icon -->
+                  <div class="me-3">
+                    <img
+                      src="/PREMIER-DATACOM/images/quote-left.svg"
+                      alt="logo"
+                      style="max-width: 26px"
+                    />
+                  </div>
+
+                  <!-- Right: Stars -->
+                  <div class="stars">
+                    ${renderStars(testimonial.stars)}
+                  </div>
+                </div>
+
+                <p class="testimonial-text">
+                  ${testimonial.text}
+                </p>
+
+                <div class="client-info">
+                  <!-- Avatar -->
+                  <div>
+                    <img
+                      src="${testimonial.avatar}"
+                      alt="Client Avatar"
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+
+                  <!-- Divider -->
+                  <div class="divider"></div>
+
+                  <!-- Details -->
+                  <div class="client-details">
+                    <h6 class="mb-0">${testimonial.name}</h6>
+                    <p class="mb-0">${testimonial.title}</p>
+                  </div>
+                </div>
+
+                <div class="nav-arrows">
+                  <button class="nav-btn-left testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="nav-btn testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+        );
+
+        sliderContainer.innerHTML = slides.join("");
+      }
+
+      // Initialize the slider after generating slides
+      function initTestimonialSlider() {
+        generateTestimonialSlides();
+
+        const swiper = new Swiper(".testimonialSwiper", {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+
+        // Custom navigation buttons
+        document.querySelectorAll(".testimonial-prev").forEach((button) => {
+          button.addEventListener("click", () => swiper.slidePrev());
+        });
+
+        document.querySelectorAll(".testimonial-next").forEach((button) => {
+          button.addEventListener("click", () => swiper.slideNext());
+        });
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", initTestimonialSlider);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Add Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>

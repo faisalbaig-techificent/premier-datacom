@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Datacom</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Add Swiper JS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/PREMIER-DATACOM/css/styles.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section
+      class="hero-section text-white d-flex align-items-center"
+      style="
+        background: url('/PREMIER-DATACOM/images/male-electrician-works-switchboard.png')
+          no-repeat center center/cover;
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <p class="text-uppercase small fw-semibold text-light mb-2">
+              Delivering Trusted Connectivity Solutions
+            </p>
+            <h1 class="display-5 fw-bold">
+              Empowering Fast,<br />
+              Seamless Connectivity
+            </h1>
+            <p class="lead mt-3">
+              Premier Datacom delivers cutting-edge communication<br />
+              infrastructure across businesses and industries.
+            </p>
+            <a href="#" class="btn btn-light btn-lg mt-3">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="our-services py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold">Our Services</h2>
+        <p class="text-muted mb-5">
+          Explore our reliable data, voice, and networking solutions designed to
+          keep your business connected and future-ready.
+        </p>
+        <div class="row" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <script>
+      const services = [
+        {
+          title: "Structured Data Cabling",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/Structured Data Cabling.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/structured-data-cabling/",
+        },
+        {
+          title: "Fiber Optic Cabling",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/fiber-pptic.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/fiber-optic-cabling/",
+        },
+        {
+          title: "Video Surveillance System",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/video-surveillance.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/security-cameras/",
+        },
+        {
+          title: "Access Control",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/access-control.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/access-control/",
+        },
+        {
+          title: "Audio Visual",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/audio-visual.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/audio-visual/",
+        },
+        {
+          title: "Cellular DAS & ERRCS",
+          desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
+          icon: "/PREMIER-DATACOM/images/cellular-das-errcs.png",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          serviceLink: "/our-services/cellular-das-errcs/",
+        },
+      ];
+
+      const servicesGrid = document.getElementById("servicesGrid");
+
+      services.map((service) => {
+        const col = document.createElement("div");
+        col.className = "col-md-6 col-lg-4 mb-4";
+
+        const hasBg = service.bgImage ? 'data-bg="true"' : "";
+        const styleAttr = service.bgImage
+          ? `style="--hover-bg: url('${service.bgImage}');"`
+          : "";
+
+        col.innerHTML = `
+    <div class="service-card p-4 h-100 rounded text-white" ${hasBg} ${styleAttr}>
+      <div class="mb-4" style="text-align: left;">
+        <img src="${service.icon}" alt="${service.title}" class="service-icon mb-3">
+        <h5 class="fw-bold">${service.title}</h5>
+        <p class="small">${service.desc}</p>
+      </div>
+      <div class="mt-auto">
+        <a href="${service.serviceLink}" class="btn btn-light d-flex align-items-center justify-content-between w-100">
+          Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+      </div>
+    </div>
+  `;
+
+        const card = col.querySelector(".service-card");
+
+        if (service.bgImage) {
+          card.addEventListener("mouseenter", () => {
+            card.classList.add("hovered");
+          });
+          card.addEventListener("mouseleave", () => {
+            card.classList.remove("hovered");
+          });
+        }
+
+        servicesGrid.appendChild(col);
+      });
+    </script>
+
+    <section class="about-section position-relative text-white py-5">
+      <img
+        src="/PREMIER-DATACOM/images/top-right.png"
+        alt="top right deco"
+        class="bg-deco-top d-none d-md-block"
+      />
+      <img
+        src="/PREMIER-DATACOM/images/bottom-left.png"
+        alt="bottom left deco"
+        class="bg-deco-bottom d-none d-md-block"
+      />
+
+      <div class="container">
+        <div class="row">
+          <h3 class="fw-bold mb-4">Who We Are</h3>
+          <div class="col-md-5 mb-4 mb-md-0">
+            <div class="underline mb-4"></div>
+            <div class="mb-5">
+              <h2 class="display-6 fw-bold">20+ years</h2>
+              <p class="mb-4">20+ Years of Excellence</p>
+
+              <h2 class="display-6 fw-bold">100%</h2>
+              <p class="mb-4">On-Time Delivery</p>
+
+              <h2 class="display-6 fw-bold">1000+</h2>
+              <p class="mb-0">Successful Projects</p>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img
+                src="/PREMIER-DATACOM/images/Border.svg"
+                alt="Border"
+                style="height: 20px"
+              />
+              <p class="small mb-0">Decades of Excellence</p>
+            </div>
+
+            <h4 class="fw-bold mb-3">
+              Premiering Excellence in <br />Technology Construction
+            </h4>
+            <p>
+              Premier DataCom, Inc., established in 2005 in Austin, TX, is a
+              leading name in technology construction across Texas and nearby
+              states. With 20+ years of experience and thousands of successful
+              projects, we’re known for delivering excellence, meeting tight
+              deadlines, and exceeding client expectations.
+            </p>
+            <p>
+              Our success lies in strong collaboration—with clients,
+              contractors, and suppliers—and a commitment to innovation. We
+              specialize in managing complex, high-value projects with precision
+              and efficiency, always evolving to meet industry demands.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="btn btn-light text-dark">Get a Quote</a>
+              <a href="#" class="btn btn-outline-light">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 text-center">
+      <div class="container">
+        <h2 class="section-title">Projects That Make Us Proud</h2>
+        <p class="section-subtitle mb-5">
+          From small-scale installs to complex infrastructure builds — see how
+          we turn ideas into high-performance systems.
+        </p>
+
+        <div id="projectsRow" class="row g-4 justify-content-center"></div>
+      </div>
+    </section>
+
+    <script>
+      const projects = [
+        {
+          title: "Hotel Cabling Project",
+          desc: "High-speed fiber optic installation to support advanced industrial automation and communication.",
+          img: "/PREMIER-DATACOM/images/hotel cabel.png",
+        },
+        {
+          title: "Office Network Upgrade",
+          desc: "Structured cabling and surveillance system installation for a multi-level corporate workspace.",
+          img: "/PREMIER-DATACOM/images/office network.png",
+        },
+        {
+          title: "Industrial Fiber Setup",
+          desc: "High-speed fiber optic installation to support advanced industrial automation and communication.",
+          img: "/PREMIER-DATACOM/images/industrial fiber.png",
+        },
+      ];
+
+      const container = document.getElementById("projectsRow");
+
+      projects.map((project) => {
+        const col = document.createElement("div");
+        col.className = "col-md-6 col-lg-4";
+
+        col.innerHTML = `
+        <div class="card project-card h-100">
+          <img src="${project.img}" class="card-img-top" alt="${project.title}">
+          <div class="card-body text-start">
+            <h5 class="card-title">${project.title}</h5>
+            <p class="card-text">${project.desc}</p>
+            <div class="d-flex justify-content-end">
+            <button class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></button>
+            <div>
+          </div>
+        </div>
+      `;
+
+        container.appendChild(col);
+      });
+    </script>
+
+    <!-- testimonials section -->
+    <section class="testimonial-section position-relative">
+      <img
+        src="/PREMIER-DATACOM/images/top-right.png"
+        alt="top right deco"
+        class="bg-deco-top d-none d-md-block"
+      />
+      <img
+        src="/PREMIER-DATACOM/images/bottom-left.png"
+        alt="bottom left deco"
+        class="bg-deco-bottom d-none d-md-block"
+      />
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>
+            Our commitment to quality and reliability shines through the words
+            of those we've proudly served across countless successful projects.
+          </p>
+        </div>
+
+        <!-- Swiper container -->
+        <div class="testimonial-container">
+          <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper" id="testimonialSlider">
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    <script>
+      const testimonials = [
+        {
+          text: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched.",
+          name: "John Wilson",
+          title: "Business Owner",
+          stars: [1, 1, 1, 1, 1], // 1 = full star, 0.5 = half star, 0 = empty star
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+        {
+          text: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched. They delivered our project on time and exceeded all expectations.",
+          name: "Sarah Johnson",
+          title: "Marketing Director",
+          stars: [1, 1, 1, 1, 0.5],
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+        {
+          text: "Professional, reliable, and incredibly talented. They transformed our vision into reality and provided ongoing support that has been invaluable to our business growth. Highly recommended for anyone looking for quality work.",
+          name: "Michael Chen",
+          title: "CEO",
+          stars: [1, 1, 1, 1, 0],
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+      ];
+
+      // Function to render star icons based on rating
+      function renderStars(ratingArray) {
+        return ratingArray
+          .map((star, index) => {
+            if (star === 1) return '<i class="fas fa-star"></i>';
+            if (star === 0.5) return '<i class="fas fa-star-half-alt"></i>';
+            return '<i class="far fa-star"></i>';
+          })
+          .join("");
+      }
+
+      function generateTestimonialSlides() {
+        const sliderContainer = document.getElementById("testimonialSlider");
+
+        const slides = testimonials.map(
+          (testimonial) => `
+          <div class="swiper-slide testimonial-slide">
+            <div class="testimonial-box"></div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <!-- Left: Quote Icon -->
+                  <div class="me-3">
+                    <img
+                      src="/PREMIER-DATACOM/images/quote-left.svg"
+                      alt="logo"
+                      style="max-width: 26px"
+                    />
+                  </div>
+
+                  <!-- Right: Stars -->
+                  <div class="stars">
+                    ${renderStars(testimonial.stars)}
+                  </div>
+                </div>
+
+                <p class="testimonial-text">
+                  ${testimonial.text}
+                </p>
+
+                <div class="client-info">
+                  <!-- Avatar -->
+                  <div>
+                    <img
+                      src="${testimonial.avatar}"
+                      alt="Client Avatar"
+                      style="width: 40px; height: 40px"
+                    />
+                  </div>
+
+                  <!-- Divider -->
+                  <div class="divider"></div>
+
+                  <!-- Details -->
+                  <div class="client-details">
+                    <h6 class="mb-0">${testimonial.name}</h6>
+                    <p class="mb-0">${testimonial.title}</p>
+                  </div>
+                </div>
+
+                <div class="nav-arrows">
+                  <button class="nav-btn-left testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="nav-btn testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+        );
+
+        sliderContainer.innerHTML = slides.join("");
+      }
+
+      // Initialize the slider after generating slides
+      function initTestimonialSlider() {
+        generateTestimonialSlides();
+
+        const swiper = new Swiper(".testimonialSwiper", {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+
+        document.querySelectorAll(".testimonial-prev").forEach((button) => {
+          button.addEventListener("click", () => swiper.slidePrev());
+        });
+
+        document.querySelectorAll(".testimonial-next").forEach((button) => {
+          button.addEventListener("click", () => swiper.slideNext());
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", initTestimonialSlider);
+    </script>
+
+    <section class="partners-section">
+      <div class="container-fluid">
+        <div class="text-center">
+          <h2 class="partners-title">Our Partners</h2>
+          <p class="partners-subtitle">
+            We proudly collaborate with industry leaders and trusted vendors to
+            deliver exceptional technology solutions.
+          </p>
+        </div>
+
+        <!-- First Marquee - Moving Right -->
+        <div class="marquee-wrapper">
+          <div class="marquee-container">
+            <div class="marquee-content marquee-right" id="marquee1">
+              <!-- First set of logos -->
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/panduit.svg"
+                  alt="Panduit"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/general-cabel-logo.svg"
+                  alt="General Cable"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/atlona.svg"
+                  alt="Atlona"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/crestron.svg"
+                  alt="Crestron"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/verkada.svg"
+                  alt="Verkada"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/rhombus.svg"
+                  alt="Rhombus"
+                  class="partner-logo"
+                />
+              </div>
+
+              <!-- Duplicate set for seamless loop -->
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/panduit.svg"
+                  alt="Panduit"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/general-cabel-logo.svg"
+                  alt="General Cable"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/atlona.svg"
+                  alt="Atlona"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/crestron.svg"
+                  alt="Crestron"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/verkada.svg"
+                  alt="Verkada"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/rhombus.svg"
+                  alt="Rhombus"
+                  class="partner-logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Marquee - Moving Left -->
+        <div class="marquee-wrapper">
+          <div class="marquee-container">
+            <div class="marquee-content marquee-left" id="marquee2">
+              <!-- First set of logos (reverse order) -->
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/ubiquitr.svg"
+                  alt="Ubiquiti"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/amag.svg"
+                  alt="AMAG Technology"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/cisco.svg"
+                  alt="Cisco"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/cel.svg"
+                  alt="CEL-FI"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/alta.svg"
+                  alt="Avigilon Alta"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/bicsi.svg"
+                  alt="BICSI"
+                  class="partner-logo"
+                />
+              </div>
+              <!-- Duplicate set for seamless loop -->
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/ubiquitr.svg"
+                  alt="Ubiquiti"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/amag.svg"
+                  alt="AMAG Technology"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/cisco.svg"
+                  alt="Cisco"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/cel.svg"
+                  alt="CEL-FI"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/alta.svg"
+                  alt="Avigilon Alta"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="logo-item">
+                <img
+                  src="/PREMIER-DATACOM/images/bicsi.svg"
+                  alt="BICSI"
+                  class="partner-logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Adjust marquee speed based on screen size
+        function adjustMarqueeSpeed() {
+          const marquee1 = document.getElementById("marquee1");
+          const marquee2 = document.getElementById("marquee2");
+
+          if (window.innerWidth <= 767) {
+            // Phone - faster speed for 3 logos
+            marquee1.style.animationDuration = "15s";
+            marquee2.style.animationDuration = "18s";
+          } else if (window.innerWidth <= 991) {
+            // Tablet - medium speed for 4 logos
+            marquee1.style.animationDuration = "18s";
+            marquee2.style.animationDuration = "22s";
+          } else {
+            // Desktop - slower speed for 6 logos
+            marquee1.style.animationDuration = "20s";
+            marquee2.style.animationDuration = "25s";
+          }
+        }
+
+        // Adjust speed on load and resize
+        adjustMarqueeSpeed();
+        window.addEventListener("resize", adjustMarqueeSpeed);
+
+        const marqueeContainers =
+          document.querySelectorAll(".marquee-container");
+        marqueeContainers.forEach((container) => {
+          const marqueeContent = container.querySelector(".marquee-content");
+
+          container.addEventListener("mouseenter", () => {
+            marqueeContent.style.animationPlayState = "running";
+          });
+
+          container.addEventListener("mouseleave", () => {
+            marqueeContent.style.animationPlayState = "running";
+          });
+        });
+      });
+    </script>
+
+    <div id="footer"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Add Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
