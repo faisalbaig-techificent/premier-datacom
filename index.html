@@ -34,6 +34,7 @@
     </script>
 
     <!-- Hero Section -->
+
     <section
       class="hero-section text-white d-flex align-items-center"
       style="
@@ -44,9 +45,16 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <p class="text-uppercase small fw-semibold text-light mb-2">
-              Delivering Trusted Connectivity Solutions
-            </p>
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img
+                src="/PREMIER-DATACOM/images/Border.svg"
+                alt="Border"
+                style="height: 20px !important"
+              />
+              <span class="text-uppercase small fw-semibold text-light">
+                Delivering Trusted Connectivity Solutions
+              </span>
+            </div>
             <h1 class="display-5 fw-bold">
               Empowering Fast,<br />
               Seamless Connectivity
@@ -55,7 +63,9 @@
               Premier Datacom delivers cutting-edge communication<br />
               infrastructure across businesses and industries.
             </p>
-            <a href="#" class="btn btn-light btn-lg mt-3">Get a Quote</a>
+            <a href="/contact-us.html" class="btn btn-light btn-lg mt-3"
+              >Get a Quote</a
+            >
           </div>
         </div>
       </div>
@@ -136,8 +146,8 @@
         <h5 class="fw-bold">${service.title}</h5>
         <p class="small">${service.desc}</p>
       </div>
-      <div class="mt-auto">
-        <a href="${service.serviceLink}" class="btn btn-light d-flex align-items-center justify-content-between w-100">
+      <div class="mt-auto ">
+        <a href="${service.serviceLink}" class="btn btn-light d-flex align-items-center justify-content-between w-100 learn-more-btn-home ">
           Learn More <i class="bi bi-arrow-right"></i>
           </a>
       </div>
@@ -301,8 +311,7 @@
         <!-- Swiper container -->
         <div class="testimonial-container">
           <div class="swiper testimonialSwiper">
-            <div class="swiper-wrapper" id="testimonialSlider">
-            </div>
+            <div class="swiper-wrapper" id="testimonialSlider"></div>
 
             <div class="swiper-pagination"></div>
           </div>
@@ -310,7 +319,6 @@
       </div>
     </section>
 
-  
     <script>
       const testimonials = [
         {
@@ -321,6 +329,20 @@
           avatar: "/PREMIER-DATACOM/images/Rectangle.png",
         },
         {
+          text: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched. They delivered our project on time and exceeded all expectations.",
+          name: "Sarah Johnson",
+          title: "Marketing Director",
+          stars: [1, 1, 1, 1, 0.5],
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+        {
+          text: "Professional, reliable, and incredibly talented. They transformed our vision into reality and provided ongoing support that has been invaluable to our business growth. Highly recommended for anyone looking for quality work.",
+          name: "Michael Chen",
+          title: "CEO",
+          stars: [1, 1, 1, 1, 0],
+          avatar: "/PREMIER-DATACOM/images/Rectangle.png",
+        },
+         {
           text: "Working with this team has been an absolute pleasure. Their attention to detail and commitment to excellence is unmatched. They delivered our project on time and exceeded all expectations.",
           name: "Sarah Johnson",
           title: "Marketing Director",
@@ -414,31 +436,66 @@
       }
 
       // Initialize the slider after generating slides
-      function initTestimonialSlider() {
-        generateTestimonialSlides();
+    function initTestimonialSlider() {
+  generateTestimonialSlides(); // fills #testimonialSlider
 
-        const swiper = new Swiper(".testimonialSwiper", {
-          loop: true,
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
+  const swiper = new Swiper(".testimonialSwiper", {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1.2,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+      slidesPerView: 1, // default for phones
 
-        document.querySelectorAll(".testimonial-prev").forEach((button) => {
-          button.addEventListener("click", () => swiper.slidePrev());
-        });
+    breakpoints: {
+      768: { slidesPerView: 1 },
+      992: { slidesPerView: 1.6 },
+      1200: { slidesPerView: 2.1 },
+    },
+    on: {
+      init: function () {
+        setSlideOpacities(this);
+      },
+      slideChangeTransitionStart: function () {
+        setSlideOpacities(this);
+      },
+    },
+  });
 
-        document.querySelectorAll(".testimonial-next").forEach((button) => {
-          button.addEventListener("click", () => swiper.slideNext());
-        });
-      }
+  // Navigation buttons
+  document.querySelectorAll(".testimonial-prev").forEach((button) =>
+    button.addEventListener("click", () => swiper.slidePrev())
+  );
+  document.querySelectorAll(".testimonial-next").forEach((button) =>
+    button.addEventListener("click", () => swiper.slideNext())
+  );
+}
+
 
       document.addEventListener("DOMContentLoaded", initTestimonialSlider);
+
+function setSlideOpacities(swiper) {
+  swiper.slides.forEach((slide) => (slide.style.opacity = 0.2));
+
+  const active = swiper.slides[swiper.activeIndex];
+  const prev = swiper.slides[swiper.activeIndex - 1];
+  const next = swiper.slides[swiper.activeIndex + 1];
+
+  if (active) active.style.opacity = "1";
+  if (prev) prev.style.opacity = "0.4";
+  if (next) next.style.opacity = "0.4";
+}
+
+
+
+
     </script>
 
     <section class="partners-section">
@@ -693,7 +750,7 @@
         });
     </script>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Add Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>

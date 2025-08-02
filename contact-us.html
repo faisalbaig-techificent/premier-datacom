@@ -4,37 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="icon" type="image/png" href="/PalmTree/images/favicons.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      .biz-form-wrapper .form-control,
-      .biz-form-wrapper .form-select {
-        border: none !important;
-        border-bottom: 1px solid #102039 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-      }
-
-      .biz-form-wrapper .form-control:focus,
-      .biz-form-wrapper .form-select:focus {
-        border-color: var(--section-background) !important;
-        box-shadow: none !important;
-        outline: none !important;
-      }
-
-      .biz-form-wrapper .form-check-input:checked {
-        background-color: #102039;
-        border-color: #102039;
-      }
-
-      .biz-form-wrapper .form-check-input {
-        border: 2px solid #7f8285;
-      }
-    </style>
+    <link rel="stylesheet" href="/PREMIER-DATACOM/css/styles.css" />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -45,57 +19,13 @@
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header").innerHTML = data;
-          // Dynamically load the drawer logic after header is inserted
-          var script = document.createElement("script");
-          script.src = "/PalmTree/js/header.js";
-          document.body.appendChild(script);
-
-          const currentPath = window.location.pathname;
-          const links = document.querySelectorAll(".nav-link");
-          links.forEach((link) => {
-            const linkPath = new URL(link.href, window.location.origin)
-              .pathname;
-            if (linkPath === currentPath) {
-              link.classList.add("active");
-            }
-          });
         });
     </script>
 
-    <!-- HERO SECTION -->
-    <!-- <div class="container py-5">
-      <div class="align-items-center custom-row">
-        <div class="text-center text-md-start mb-4 mb-md-0 order-1 order-md-0">
-          <h1
-            class="fw-bold display-5 "
-          >
-            Get in Touch
-          </h1>
-          <div
-            class="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start gap-3 col-md-8"
-          >
-            <h6
-              class=" fw-semibold small hero-text-animate hero-text-slide-left hero-text-stagger-2"
-            >
-              Reach out today — whether you're ready to work together or just
-              exploring your options.
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div style="background-color: #f3f4f5">
       <div class="py-3 biz-form-wrapper px-4 container">
         <h3 class="fw-bold my-4 text-center">Contact Us</h3>
-        <form action="https://formsubmit.co/baigf0009@gmail.com" method="POST">
-          <input
-            type="hidden"
-            name="_subject"
-            value="Premier Datacom Contact Form Submission"
-          />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" />
-          <input type="hidden" name="_template" />
+        <form id="contact-form">
           <div class="row gy-4">
             <div class="col-12">
               <label class="form-label">Company / Organization</label>
@@ -251,7 +181,6 @@
                 class="form-control biz-input"
                 rows="4"
                 placeholder="Describe your project here..."
-                required
               ></textarea>
             </div>
             <div class="col-12 text-center mt-5">
@@ -267,6 +196,13 @@
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
