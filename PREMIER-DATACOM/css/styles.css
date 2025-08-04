@@ -785,6 +785,7 @@ body {
     position: relative;
     background: transparent;
     z-index: 1;
+    
 }
 
 .testimonial-card {
@@ -956,6 +957,7 @@ body {
 
 .swiper-wrapper {
     padding-bottom: 30px;
+    
     /* to avoid cut-off shadows */
 }
 
