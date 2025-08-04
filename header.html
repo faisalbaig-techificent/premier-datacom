@@ -13,7 +13,7 @@
   <body>
     <div class="subheader text-white py-2 small">
       <div class="container d-flex">
-        <div>
+        <div style="flex: grow 1;">
           <a
             href="mailto:service@premier-datacom.com"
             class="text-white text-decoration-none"
@@ -26,10 +26,17 @@
         <li class="nav-item mx-2 d-block">
           <div style="width: 1px; height: 24px; background-color: #ccc"></div>
         </li>
-        <div>
+        <div class="d-none d-md-block">
           <i class="bi bi-geo-alt"></i> 9411 Neils Thompson Drive Austin, TX
           78758
         </div>
+        <li class="nav-item mx-2 d-none d-md-block">
+          <div style="width: 1px; height: 24px; background-color: #ccc"></div>
+        </li>
+        <div>
+          <a href="tel:7376157037" class="text-white text-decoration-none">
+          <i class="bi bi-telephone"></i> (737) 615-7037</div>
+        </a>
       </div>
     </div>
 
@@ -75,7 +82,9 @@
               ></div>
             </li>
             <li class="nav-item ms-3">
-              <a class="btn  text-light px-4 get-quote-btn" href="/contact-us.html"
+              <a
+                class="btn text-light px-4 get-quote-btn"
+                href="/contact-us.html"
                 >Get a Quote</a
               >
             </li>
