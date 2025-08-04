@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Premier Datacom</title>
+    <title>Servies</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,14 +29,14 @@
     <section
       class="hero-section text-white d-flex align-items-center"
       style="
-        background: url(/PREMIER-DATACOM/images/services-hero-section.png)
+        background: url(/PREMIER-DATACOM/images/services-hero-section.webp)
           no-repeat center center/cover;
       "
     >
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="d-flex align-items-center gap-3 mb-3">
               <img
                 src="/PREMIER-DATACOM/images/Border.svg"
                 alt="Border"
@@ -47,12 +47,12 @@
               </span>
             </div>
 
-            <h1 class="display-5 fw-bold">What We Offer</h1>
+            <h1 class="display-5 fw-bold text-uppercase">What We Offer</h1>
             <p class="lead mt-3">
               From structured cabling to security systems, we offer end-to-end
               services built for modern businesses.
             </p>
-            <a href="#" class="btn btn-light btn-lg mt-3">Get a Quote</a>
+            <!-- <a href="#" class="btn btn-light btn-lg mt-3">Get a Quote</a> -->
           </div>
         </div>
       </div>
@@ -61,56 +61,62 @@
     <section class="our-services py-5">
       <div class="container text-center">
         <h2 class="fw-bold">Our Services</h2>
+        <div class="d-flex justify-content-center align-items-center gap-1 ">
+          <div class="line "></div>
+          <div class="halfline "></div>
+        </div>
         <p class="text-muted mb-5">
-          Explore our reliable data, voice, and networking solutions designed to
-          keep your business connected and future-ready.
+          Explore our reliable data, voice, and networking solutions
+          designed to<span class=" d-md-block"
+            > keep your business connected and future-ready.</span
+          >
         </p>
         <div class="row" id="servicesGrid"></div>
       </div>
     </section>
 
     <script>
-       const services = [
+      const services = [
         {
           title: "Structured Data Cabling",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/Structured Data Cabling.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/structured-data-cabling/",
         },
         {
           title: "Fiber Optic Cabling",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/fiber-pptic.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/fiber-optic-cabling/",
         },
         {
           title: "Video Surveillance System",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/video-surveillance.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/security-cameras/",
         },
         {
           title: "Access Control",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/access-control.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/access-control/",
         },
         {
           title: "Audio Visual",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/audio-visual.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/audio-visual/",
         },
         {
           title: "Cellular DAS & ERRCS",
           desc: "Advanced security cameras for homes, offices, and businesses ensuring visibility, safety, and peace of mind.",
           icon: "/PREMIER-DATACOM/images/cellular-das-errcs.png",
-          bgImage: "/PREMIER-DATACOM//images/bg-image.jpg",
+          bgImage: "/PREMIER-DATACOM//images/bg-image.webp",
           serviceLink: "/our-services/cellular-das-errcs/",
         },
       ];
@@ -170,6 +176,12 @@
 
       <div class="contact-section">
         <h2>Let’s Start the Conversation</h2>
+          <div
+          class="d-flex justify-content-center align-items-center gap-1 mb-2"
+        >
+          <div class="line"></div>
+          <div class="halfline"></div>
+        </div>
         <p>
           Send us a message — we’re here to help with expert advice, tailored
           solutions, and quick support. Whether it’s a small inquiry or a
@@ -214,6 +226,12 @@
       <div class="container-fluid">
         <div class="text-center">
           <h2 class="partners-title">Our Partners</h2>
+            <div
+          class="d-flex justify-content-center align-items-center gap-1 mb-2"
+        >
+          <div class="line"></div>
+          <div class="halfline"></div>
+        </div>
           <p class="partners-subtitle">
             We proudly collaborate with industry leaders and trusted vendors to
             deliver exceptional technology solutions.

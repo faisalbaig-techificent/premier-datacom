@@ -1,13 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+}
+
 :root {
     --section-background: #102039;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Instrument Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+.subheader {
+    background-color: var(--section-background);
+}
+
+.get-quote-btn {
+    background-color: var(--section-background);
+
+}
+
+.get-quote-btn:hover {
+    background-color: var(--section-background);
+    transform: translateY(-2px);
+
+}
 
 .nav-item a {
     color: #102039;
@@ -52,6 +72,21 @@ body {
     background-repeat: no-repeat;
   }
 } */
+
+
+.line {
+    width: 25px;
+    border: 1px solid;
+    text-align: center;
+    display: flex;
+}
+
+.halfline {
+    width: 6px;
+    border: 1px solid;
+    text-align: center;
+    display: flex;
+}
 
 .learn-more-btn-home i {
     transition: transform 0.5s ease;
@@ -380,7 +415,7 @@ body {
 .partners-title {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .partners-subtitle {
@@ -392,7 +427,7 @@ body {
 }
 
 .marquee-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     padding: 20px 0;
@@ -503,13 +538,13 @@ body {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
 
 @keyframes scrollLeft {
     0% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 
     100% {
@@ -705,9 +740,21 @@ body {
     }
 }
 
-
-
 /* testimonials section  */
+
+
+.testimonial-square {
+    width: 25px;
+    height: 25px;
+    background-color: var(--section-background);
+}
+
+.testimonial-line {
+    height: 1px;
+    background-color: var(--section-background);
+    margin-left: 0;
+    width: 40px;
+}
 
 .testimonial-section {
     background: #102039;
@@ -727,15 +774,17 @@ body {
     align-items: center;
     position: relative;
     padding: 20px;
+     pointer-events: none;
 }
 
 .testimonial-box {
     border: 5px solid white;
     width: 100%;
     max-width: 300px;
-    height: 330px;
+    height: 280px;
     position: relative;
     background: transparent;
+    z-index: 1;
 }
 
 .testimonial-card {
@@ -748,7 +797,7 @@ body {
     padding: 20px;
     width: 100%;
     max-width: 500px;
-    min-height: 280px;
+    min-height: 240px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     z-index: 10;
 
@@ -802,6 +851,7 @@ body {
     right: 20px;
     display: flex;
     gap: 10px;
+    z-index: 15;
     /* display: flex;
         gap: 10px;
         justify-content: flex-end; */
@@ -820,6 +870,11 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+.nav-btn, .nav-btn-left {
+    position: relative; 
+    z-index: 16; }
+
 
 .nav-btn:hover {
     background: #102039;
@@ -865,8 +920,8 @@ body {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    /* font-size: 2.5rem; */
+    margin-bottom: 5px;
     font-weight: 700;
 }
 
@@ -881,36 +936,48 @@ body {
     position: relative;
     margin-top: 30px;
 }
+
 .testimonial-container {
-  position: relative;
-  max-width: 100%;
-  padding: 0 20px; /* creates space on sides for peek effect */
-  overflow: hidden; /* hides overflowing parts */
+    position: relative;
+    max-width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
 }
 
 .testimonialSwiper {
-  overflow: visible; /* allows slides to peek */
+    overflow: visible;
+    position: relative;
+    z-index: 5;
+    /* allows slides to peek */
 }
 
 .swiper-wrapper {
-  padding-bottom: 30px; /* to avoid cut-off shadows */
+    padding-bottom: 30px;
+    /* to avoid cut-off shadows */
 }
 
 .testimonial-slide {
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
+
+.testimonial-slide .nav-arrows {
+
+    z-index: 20;
+    pointer-events: auto;
+}
+
 .swiper-slide {
-  opacity: 0.2;
-  transition: opacity 0.5s ease;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
 }
 
 .swiper-slide-active {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 
 .swiper-slide-next,
 .swiper-slide-prev {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
 
@@ -918,6 +985,17 @@ body {
     .swiper-pagination {
         margin-top: 10px;
     }
+
+    .testimonial-box {
+
+        height: 330px;
+
+    }
+
+    .testimonial-card {
+        min-height: 280px;
+    }
+
 
 }
 
@@ -945,6 +1023,12 @@ body {
         left: 50%;
         max-width: 90%;
     }
+
+    .testimonial-box {
+        left: -27%;
+    }
+
+
 }
 
 @media (max-width: 768px) {
