@@ -774,7 +774,7 @@ body {
     align-items: center;
     position: relative;
     padding: 20px;
-     pointer-events: none;
+    pointer-events: none;
 }
 
 .testimonial-box {
@@ -871,9 +871,11 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-btn, .nav-btn-left {
-    position: relative; 
-    z-index: 16; }
+.nav-btn,
+.nav-btn-left {
+    position: relative;
+    z-index: 16;
+}
 
 
 .nav-btn:hover {
@@ -940,9 +942,10 @@ body {
 .testimonial-container {
     position: relative;
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 0px;
     overflow: hidden;
 }
+
 
 .testimonialSwiper {
     overflow: visible;
@@ -994,6 +997,12 @@ body {
 
     .testimonial-card {
         min-height: 280px;
+    }
+
+    .testimonial-container {
+
+        padding: 0 20px;
+
     }
 
 
