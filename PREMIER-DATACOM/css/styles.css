@@ -155,7 +155,7 @@ html {
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    /* overflow: hidden; Prevent body scroll */
+    overflow: hidden; /* Prevent body scroll */
 }
 
 .drawer-menu.open {
@@ -337,7 +337,7 @@ html {
     }
     
     .drawer-footer {
-        min-height: 160px;
+        min-height: 220px;
         padding: 12px 15px;
     }
     
@@ -366,7 +366,7 @@ html {
     }
     
     .drawer-footer {
-        min-height: 150px;
+        min-height: 220px;
         padding: 10px 12px;
     }
     
