@@ -16,10 +16,10 @@ body {
 
 @media (max-width: 480px) {
     .phone-number {
-font-size: 13px;
+font-size: 12px;
     }
     .email-address {
-font-size: 13px;
+font-size: 12px;
     
     } 
 }
@@ -198,7 +198,13 @@ html {
     flex-direction: column;
     padding: 0;
     overflow-y: auto; /* Enable scrolling */
-    max-height: calc(100vh - 80px); /* Account for header height */
+    height: calc(100vh - 80px); /* Account for header height */
+}
+
+/* Drawer Navigation Section */
+.drawer-nav-section {
+    flex: 1;
+    overflow-y: auto;
 }
 
 /* Drawer Navigation */
@@ -214,7 +220,7 @@ html {
 
 .drawer-nav-link {
     display: block;
-    padding: 20px;
+    padding: 18px 20px;
     color: #102039;
     text-decoration: none;
     font-weight: 500;
@@ -246,10 +252,11 @@ html {
 
 /* Drawer Footer */
 .drawer-footer {
-    padding: 20px;
+    padding: 15px 20px;
     border-top: 1px solid #e9ecef;
     background-color: #f8f9fa;
     flex-shrink: 0; /* Prevent footer from shrinking */
+    min-height: 180px; /* Ensure minimum height for contact info */
 }
 
 .drawer-cta-btn {
@@ -257,13 +264,14 @@ html {
     width: 100%;
     background-color: var(--section-background);
     color: white;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 .drawer-cta-btn:hover {
@@ -274,16 +282,16 @@ html {
 }
 
 .drawer-contact-info {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .drawer-contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 8px;
+    margin-bottom: 12px;
     color: #666;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .drawer-contact-item i {
@@ -291,6 +299,7 @@ html {
     width: 16px;
     margin-top: 2px;
     flex-shrink: 0;
+    font-size: 16px;
 }
 
 .drawer-contact-item a,
@@ -299,7 +308,7 @@ html {
     text-decoration: none;
     transition: color 0.3s ease;
     word-break: break-word;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .drawer-contact-item a:hover {
@@ -325,6 +334,49 @@ html {
     .drawer-menu {
         width: 280px;
         left: -280px;
+    }
+    
+    .drawer-footer {
+        min-height: 160px;
+        padding: 12px 15px;
+    }
+    
+    .drawer-contact-item {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    
+    .drawer-contact-item a,
+    .drawer-contact-item span {
+        font-size: 15px;
+    }
+    
+    .drawer-cta-btn {
+        padding: 10px;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+    .drawer-menu {
+        width: 260px;
+        left: -260px;
+    }
+    
+    .drawer-footer {
+        min-height: 150px;
+        padding: 10px 12px;
+    }
+    
+    .drawer-contact-item {
+        margin-bottom: 8px;
+    }
+    
+    .drawer-contact-item a,
+    .drawer-contact-item span {
+        font-size: 14px;
     }
 }
 
