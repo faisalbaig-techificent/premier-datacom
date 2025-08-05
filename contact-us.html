@@ -21,6 +21,7 @@
           document.getElementById("header").innerHTML = data;
         });
     </script>
+    <script src="/js/sticky-header.js"></script>
 
     <div style="background-color: #f3f4f5">
       <div class="py-3 biz-form-wrapper px-4 container">
@@ -198,7 +199,7 @@
     </div>
     <div id="footer"></div>
     <script>
-      fetch("footer.html")
+      fetch("/footer.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer").innerHTML = data;

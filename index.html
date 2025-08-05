@@ -33,11 +33,12 @@
           document.getElementById("header").innerHTML = data;
         });
     </script>
+    <script src="/js/sticky-header.js"></script>
 
     <!-- Hero Section -->
 
     <section
-      class="hero-section text-white d-flex align-items-center"
+      class="hero-section text-white d-flex align-items-center scroll-fade"
       style="
         background: url('/PREMIER-DATACOM/images/male-electrician-works-switchboard.webp')
           no-repeat center center/cover;
@@ -74,12 +75,12 @@
     <!-- Services Section -->
     <section class="our-services py-5">
       <div class="container text-center">
-        <h2 class="fw-bold">Our Services</h2>
+        <h2 class="fw-bold scroll-animate" data-delay="100">Our Services</h2>
         <div class="d-flex justify-content-center align-items-center gap-1">
-          <div class="line mb-4"></div>
-          <div class="halfline mb-4"></div>
+          <div class="line mb-4 scroll-animate" data-delay="200"></div>
+          <div class="halfline mb-4 scroll-animate" data-delay="250"></div>
         </div>
-        <p class="text-muted mb-5">
+        <p class="text-muted mb-5 scroll-animate" data-delay="300">
           Explore our reliable data, voice, and networking solutions designed to
           <span class="d-md-block">
             keep your business connected and future-ready.</span
@@ -180,16 +181,18 @@
       <img
         src="/PREMIER-DATACOM/images/top-right.png"
         alt="top right deco"
-        class="bg-deco-top d-none d-md-block"
+        class="bg-deco-top d-none d-md-block scroll-slide-right"
+        data-delay="200"
       />
       <img
         src="/PREMIER-DATACOM/images/bottom-left.png"
         alt="bottom left deco"
-        class="bg-deco-bottom d-none d-md-block"
+        class="bg-deco-bottom d-none d-md-block scroll-slide-left"
+        data-delay="300"
       />
 
       <div class="container">
-        <div class="row py-4">
+        <div class="row py-5">
           <h3 class="fw-bold mb-3">Who We Are</h3>
           <div class="col-md-5 mb-4 mb-md-0">
             <div class="d-flex align-items-center gap-1">
@@ -246,14 +249,14 @@
 
     <section class="py-5 text-center">
       <div class="container">
-        <h2 class="section-title">Projects That Make Us Proud</h2>
+        <h2 class="section-title scroll-animate" data-delay="100">Projects That Make Us Proud</h2>
         <div
           class="d-flex justify-content-center align-items-center gap-1 mb-2"
         >
-          <div class="line"></div>
-          <div class="halfline"></div>
+          <div class="line scroll-animate" data-delay="200"></div>
+          <div class="halfline scroll-animate" data-delay="250"></div>
         </div>
-        <p class="section-subtitle mb-5">
+        <p class="section-subtitle mb-5 scroll-animate" data-delay="300">
           From small-scale installs to complex infrastructure builds — see how
           <span class="d-md-block">
             we turn ideas into high-performance systems.
@@ -268,17 +271,17 @@
       const projects = [
         {
           title: "Hotel Cabling Project",
-          desc: "High-speed fiber optic installation to support advanced industrial automation and communication.",
+          desc: "Premier DataCom successfully delivered a comprehensive high-speed fiber optic cabling solution for a large-scale hotel property. The project involved the installation of advanced structured cabling to support critical systems such as high-speed internet, VoIP, IPTV, surveillance, and smart room automation.",
           img: "/PREMIER-DATACOM/images/hotel-cabel.webp",
         },
         {
           title: "Office Network Upgrade",
-          desc: "Structured cabling and surveillance system installation for a multi-level corporate workspace.",
+          desc: "Premier DataCom executed a full-scale structured cabling upgrade for a multi-level corporate office, aimed at enhancing network performance, security, and communication across all departments. The project included the installation of high-quality Cat6 and fiber optic cabling, strategically routed to support core IT systems, VoIP phones, and high-speed internet access",
           img: "/PREMIER-DATACOM/images/office-network.webp",
         },
         {
           title: "Industrial Fiber Setup",
-          desc: "High-speed fiber optic installation to support advanced industrial automation and communication.",
+          desc: "Premier DataCom implemented a high-speed fiber optic network for an industrial facility to support advanced automation and seamless data communication. The infrastructure was engineered to withstand harsh operating environments while ensuring minimal signal loss and high reliability.",
           img: "/PREMIER-DATACOM/images/industrial-fiber.webp",
         },
       ];
@@ -290,7 +293,7 @@
         col.className = "col-md-6 col-lg-4";
 
         col.innerHTML = `
-        <div class="card project-card h-100">
+        <div class="card project-card h-100 scroll-fade">
           <img src="${project.img}" class="card-img-top" alt="${project.title}">
           <div class="card-body text-start">
             <h5 class="card-title">${project.title}</h5>
@@ -309,12 +312,14 @@
       <img
         src="/PREMIER-DATACOM/images/top-right.png"
         alt="top right deco"
-        class="bg-deco-top d-none d-md-block"
+        class="bg-deco-top d-none d-md-block scroll-slide-right"
+        data-delay="200"
       />
       <img
         src="/PREMIER-DATACOM/images/bottom-left.png"
         alt="bottom left deco"
-        class="bg-deco-bottom d-none d-md-block"
+        class="bg-deco-bottom d-none d-md-block scroll-slide-left"
+        data-delay="300"
       />
       <div class="container">
         <div class="section-header">
@@ -758,15 +763,27 @@
 
     <div id="footer"></div>
     <script>
-      fetch("footer.html")
+      fetch("/footer.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer").innerHTML = data;
+          // Trigger scroll animations after footer is loaded
+          setTimeout(() => {
+            if (window.refreshAnimationsForDynamicContent) {
+              window.refreshAnimationsForDynamicContent();
+            } else if (window.scrollAnimations) {
+              window.scrollAnimations.refresh();
+            }
+          }, 500);
         });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Add Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Scroll Animations -->
+    <script src="/js/scroll-animations.js"></script>
+    <!-- Auto Scroll Animations -->
+    <script src="/js/auto-scroll-animations.js"></script>
   </body>
 </html>

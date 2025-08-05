@@ -1,97 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Header</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/PREMIER-DATACOM/css/styles.css" />
-  </head>
-  <body>
-    <div class="subheader text-white py-2 small">
-      <div class="container d-flex">
-        <div >
+<div class="subheader text-white py-2 small">
+  <div class="container d-flex justify-content-between">
+    <div class="email-address">
+      <a
+        href="mailto:service@premier-datacom.com"
+        class="text-white text-decoration-none"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="bi bi-envelope"></i> service@premier-datacom.com
+      </a>
+    </div>
+    <li class="nav-item mx-2 d-block">
+      <div style="width: 1px; height: 24px; background-color: #ccc"></div>
+    </li>
+    <div class="d-none d-md-block">
+      <i class="bi bi-geo-alt"></i> 9411 Neils Thompson Drive, Austin, TX
+      78758
+    </div>
+    <li class="nav-item mx-2 d-none d-md-block">
+      <div style="width: 1px; height: 24px; background-color: #ccc"></div>
+    </li>
+    <div class="phone-number">
+      <a href="tel:7376157037" class="text-white text-decoration-none">
+      <i class="bi bi-telephone"></i> +1 (737) 615-7037
+    </div>
+    </a>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+      <img
+        src="/PREMIER-DATACOM/images/datacom-logo.svg"
+        alt="Premier Datacom"
+        width="150"
+        class="me-2"
+      />
+    </a>
+    
+    <!-- Mobile Menu Toggle Button -->
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      id="drawerToggle"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Desktop Navigation Menu -->
+    <div
+      class="collapse navbar-collapse justify-content-end d-none d-lg-flex"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav align-items-center p-4">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/our-services/">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about-us.html">About Us</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/blog.html">Blog</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-us.html">Contact</a>
+        </li>
+        <li class="nav-item mx-4 d-none d-lg-block">
+          <div
+            style="width: 1px; height: 44px; background-color: #102039"
+          ></div>
+        </li>
+        <li class="nav-item ms-3">
           <a
-            href="mailto:service@premier-datacom.com"
-            class="text-white text-decoration-none"
-            target="_blank"
-            rel="noopener noreferrer"
+            class="btn text-light px-4 get-quote-btn"
+            href="/contact-us.html"
+            >Get a Quote</a
           >
-            <i class="bi bi-envelope"></i> service@premier-datacom.com
-          </a>
-        </div>
-        <li class="nav-item mx-2 d-block">
-          <div style="width: 1px; height: 24px; background-color: #ccc"></div>
         </li>
-        <div class="d-none d-md-block">
-          <i class="bi bi-geo-alt"></i> 9411 Neils Thompson Drive Austin, TX
-          78758
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer Overlay -->
+<div id="drawerOverlay" class="drawer-overlay"></div>
+
+<!-- Mobile Drawer Menu -->
+<div id="drawerMenu" class="drawer-menu">
+  <div class="drawer-header">
+    <div class="drawer-logo">
+      <img
+        src="/PREMIER-DATACOM/images/footerlogo.svg"
+        alt="Premier Datacom"
+        width="150"
+      />
+    </div>
+    <button class="drawer-close" id="drawerClose">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  
+  <div class="drawer-content">
+    <ul class="drawer-nav">
+      <li class="drawer-nav-item">
+        <a href="/" class="drawer-nav-link">Home</a>
+      </li>
+      <li class="drawer-nav-item">
+        <a href="/our-services/" class="drawer-nav-link">Services</a>
+      </li>
+      <li class="drawer-nav-item">
+        <a href="/about-us.html" class="drawer-nav-link">About Us</a>
+      </li>
+      <li class="drawer-nav-item">
+        <a href="/contact-us.html" class="drawer-nav-link">Contact</a>
+      </li>
+    </ul>
+    
+    <div class="drawer-footer">
+      <a href="/contact-us.html" class="drawer-cta-btn">Get a Quote</a>
+      <div class="drawer-contact-info">
+        <div class="drawer-contact-item">
+          <i class="bi bi-envelope"></i>
+          <a href="mailto:service@premier-datacom.com">service@premier-datacom.com</a>
         </div>
-        <li class="nav-item mx-2 d-none d-md-block">
-          <div style="width: 1px; height: 24px; background-color: #ccc"></div>
-        </li>
-        <div>
-          <a href="tel:7376157037" class="text-white text-decoration-none">
-          <i class="bi bi-telephone"></i> (737) 615-7037
+        <div class="drawer-contact-item">
+          <i class="bi bi-telephone"></i>
+          <a href="tel:7376157037">+1 (737) 615-7037</a>
         </div>
-        </a>
       </div>
     </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold text-primary" href="/">
-          <img
-            src="/PREMIER-DATACOM/images/datacom-logo.svg"
-            alt="Premier Datacom"
-            width="150"
-            class="me-2"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav align-items-center p-4">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="/our-services/">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about-us.html">About us</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="/blog.html">Blog</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="/contact-us.html">Contact</a>
-            </li>
-            <li class="nav-item mx-4 d-none d-lg-block">
-              <div
-                style="width: 1px; height: 44px; background-color: #102039"
-              ></div>
-            </li>
-            <li class="nav-item ms-3">
-              <a
-                class="btn text-light px-4 get-quote-btn"
-                href="/contact-us.html"
-                >Get a Quote</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </body>
-</html>
+  </div>
+</div>

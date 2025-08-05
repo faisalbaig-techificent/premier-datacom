@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servies</title>
+    <title>Services</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,6 +24,7 @@
           document.getElementById("header").innerHTML = data;
         });
     </script>
+    <script src="/js/sticky-header.js"></script>
 
     <!-- Hero Section -->
     <section
@@ -478,9 +479,21 @@
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer").innerHTML = data;
+          // Trigger scroll animations after footer is loaded
+          setTimeout(() => {
+            if (window.refreshAnimationsForDynamicContent) {
+              window.refreshAnimationsForDynamicContent();
+            } else if (window.scrollAnimations) {
+              window.scrollAnimations.refresh();
+            }
+          }, 500);
         });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll Animations -->
+    <script src="/js/scroll-animations.js"></script>
+    <!-- Auto Scroll Animations -->
+    <script src="/js/auto-scroll-animations.js"></script>
   </body>
 </html>
