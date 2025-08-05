@@ -148,14 +148,14 @@ html {
     top: 0;
     left: -300px;
     width: 300px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: white;
     z-index: 1050;
     transition: left 0.3s ease;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevent body scroll */
+    /* overflow: hidden; Prevent body scroll */
 }
 
 .drawer-menu.open {
