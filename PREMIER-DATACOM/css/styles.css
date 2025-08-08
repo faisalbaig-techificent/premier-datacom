@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
 
-body {
-    font-family: 'Instrument Sans', sans-serif;
-}
+
 
 :root {
     --section-background: #102039;
@@ -12,6 +10,7 @@ body {
     font-family: 'Instrument Sans', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 @media (max-width: 480px) {
